@@ -495,7 +495,8 @@ export default {
                     { status: 500, headers: { 'Content-Type': 'application/json' } }
                 );
 			}
-            falKeys = env.FAL_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
+			const apikey = env.FAL_KEY1 +env.FAL_KEY2 + env.FAL_KEY3
+            falKeys = apikey.split(',').map(k => k.trim()).filter(k => k.length > 0);
             if (falKeys.length === 0) {
                 console.error("FAL_KEY secret is set but contains no valid keys after parsing.");
 				return createCorsResponse(
